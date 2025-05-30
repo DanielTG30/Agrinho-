@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entendendo HTML, CSS e JavaScript</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Estilos inline para controlar o tamanho da fonte */
+        body {
+            font-size: 1em; /* Tamanho base */
+            font-family: sans-serif; /* Adicionando uma fonte padrão */
+            line-height: 1.6;
+            margin: 20px;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .tamanho-fonte-pequeno {
+            font-size: 0.8em;
+        }
+        .tamanho-fonte-medio {
+            font-size: 1em;
+        }
+        .tamanho-fonte-grande {
+            font-size: 1.2em;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 20px 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        h1 {
+            color: #0056b3;
+        }
+
+        h2 {
+            color: #0056b3;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+            margin-top: 30px;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-right: 10px;
+            margin-bottom: 20px;
+            font-size: 1em;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        .setor, .resumo-geral {
+            display: none; /* Inicialmente oculto */
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .setor.active, .resumo-geral.active {
+            display: block; /* Visível quando ativo */
+        }
+
+        ul {
+            list-style-type: disc;
+            margin-left: 20px;
+        }
+
+        strong {
+            color: #007bff;
+        }
+
+        .resumo-setor {
+            font-style: italic;
+            color: #555;
+            margin-top: 15px;
+            padding-top: 10px;
+            border-top: 1px dashed #eee;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            color: #777;
+            font-size: 0.9em;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Entendendo as Linguagens da Web</h1>
+            <button onclick="document.body.className = 'tamanho-fonte-grande'">Aumentar Fonte</button>
+            <button onclick="document.body.className = 'tamanho-fonte-medio'">Fonte Normal</button>
+            <button onclick="document.body.className = 'tamanho-fonte-pequeno'">Diminuir Fonte</button>
+            <hr>
+            <button onclick="showSection('html')">O que é HTML?</button>
+            <button onclick="showSection('css')">O que é CSS?</button>
+            <button onclick="showSection('javascript')">O que é JavaScript?</button>
+            <button onclick="showSection('resumo-geral')">Resumo Geral</button>
+        </header>
+        <main>
+            <section id="html" class="setor">
+                <h2>O que é HTML?</h2>
+                <p><strong>HTML (HyperText Markup Language)</strong> é a linguagem de marcação fundamental para criar a estrutura e o conteúdo de uma página web. É como se fossem os tijolos e a planta baixa de uma casa, definindo onde cada elemento (textos, imagens, links, etc.) estará localizado.</p>
+                <ul>
+                    <li>Define a estrutura do documento.</li>
+                    <li>Organiza o conteúdo em títulos, parágrafos, listas, etc.</li>
+                    <li>Insere imagens e outros elementos multimídia.</li>
+                    <li>Cria links entre páginas.</li>
+                </ul>
+                <p class="resumo-setor">Em resumo, o HTML é a base estrutural do seu site.</p>
+            </section>
+
+            <section id="css" class="setor">
+                <h2>O que é CSS?</h2>
+                <p><strong>CSS (Cascading Style Sheets)</strong> é a linguagem de estilo utilizada para controlar a apresentação visual de um documento HTML. É como a pintura, os móveis e a decoração de uma casa, definindo cores, fontes, layouts e outros aspectos visuais.</p>
+                <ul>
+                    <li>Define cores de fundo e texto.</li>
+                    <li>Controla o tamanho e o estilo das fontes.</li>
+                    <li>Define o layout e o posicionamento dos elementos.</li>
+                    <li>Cria designs responsivos para diferentes dispositivos.</li>
+                </ul>
+                <p class="resumo-setor">Em resumo, o CSS é responsável pela aparência do seu site.</p>
+            </section>
+
+            <section id="javascript" class="setor">
+                <h2>O que é JavaScript?</h2>
+                <p><strong>JavaScript (JS)</strong> é uma linguagem de programação que adiciona interatividade e dinamismo às páginas web. É como a parte elétrica e os aparelhos da casa, permitindo que a página responda às ações do usuário e realize tarefas complexas.</p>
+                <ul>
+                    <li>Adiciona interatividade a elementos HTML.</li>
+                    <li>Manipula o conteúdo e o estilo da página dinamicamente.</li>
+                    <li>Responde a eventos do usuário (cliques, movimentos do mouse, etc.).</li>
+                    <li>Comunica-se com servidores (através de AJAX).</li>
+                    <li>Pode ser usado no frontend (navegador) e no backend (Node.js).</li>
+                </ul>
+                <p class="resumo-setor">Em resumo, o JavaScript adiciona comportamento e interatividade ao seu site.</p>
+            </section>
+
+            <section id="resumo-geral" class="resumo-geral">
+                <h2>Em Resumo Geral:</h2>
+                <p>Pense no <strong>HTML</strong> como o *esqueleto*, no <strong>CSS</strong> como a *roupa* e no <strong>JavaScript</strong> como o *comportamento* do seu site. O HTML dá a estrutura e o conteúdo, o CSS cuida da aparência e o JavaScript adiciona a interatividade.</p>
+            </section>
+        </main>
+        <footer>
+            <p>&copy; 2025 Entendendo a Web</p>
+        </footer>
+    </div>
+
+    <script>
+        function showSection(id) {
+            // Oculta todas as seções
+            const sections = document.querySelectorAll('.setor, .resumo-geral');
+            sections.forEach(section => {
+                section.classList.remove('active');
+            });
+
+            // Mostra a seção clicada
+            const activeSection = document.getElementById(id);
+            if (activeSection) {
+                activeSection.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>
